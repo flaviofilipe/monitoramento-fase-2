@@ -1,3 +1,4 @@
+import time
 from src.models import Plantacao
 from src.sensores.sensoriamento import gerar
 from src.operacoes import (
@@ -26,14 +27,16 @@ TOTAL_LEITURA = 10
 """
 
 
-def leitura_das_plantacoes() -> list[PlantacaoTemperatura]:
+def leitura_das_plantacoes(
+    quant_pantacoes=TOTAL_PLANTACAO, quant_leituras=TOTAL_LEITURA
+) -> list[PlantacaoTemperatura]:
     plantacoes = []
-    for i in range(TOTAL_PLANTACAO):
+    for i in range(quant_pantacoes):
         plantacao = Plantacao(
             nome=f"Plantacao_{i+1}",
         )
 
-        temperatura = gerar(TOTAL_LEITURA)
+        temperatura = gerar(quant_leituras)
 
         plantacoes.append(PlantacaoTemperatura(plantacao, temperatura))
 
@@ -76,12 +79,17 @@ def fase_3_status(plantacoes: list[PlantacaoTemperatura]):
 
 
 def main():
+    start_time = time.time()
     plantacoes = leitura_das_plantacoes()
 
     fase_1_plantacoes(plantacoes)
     fase_2_temperaturas_desordenadas(plantacoes)
     fase_2_1_temperaturas_ordenadas(plantacoes)
     fase_3_status(plantacoes)
+
+    end_time = time.time()
+
+    print(f"Tempo de execução: {end_time - start_time:.2f} segundos")
 
 
 if __name__ == "__main__":
