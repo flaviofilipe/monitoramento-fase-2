@@ -4,6 +4,8 @@ from src.operacoes import (
     imprimir_plantacao,
     imprimir_temperatura,
     imprimir_status,
+    sort_temperaturas,
+    PlantacaoTemperatura,
 )
 
 TOTAL_PLANTACAO = 10
@@ -24,7 +26,7 @@ TOTAL_LEITURA = 10
 """
 
 
-def leitura_das_plantacoes():
+def leitura_das_plantacoes() -> list[PlantacaoTemperatura]:
     plantacoes = []
     for i in range(TOTAL_PLANTACAO):
         plantacao = Plantacao(
@@ -33,23 +35,53 @@ def leitura_das_plantacoes():
 
         temperatura = gerar(TOTAL_LEITURA)
 
-        plantacoes.append((plantacao, temperatura))
+        plantacoes.append(PlantacaoTemperatura(plantacao, temperatura))
 
     return plantacoes
+
+
+def fase_1_plantacoes(plantacoes: list[PlantacaoTemperatura]):
+    print("\n", "-" * 50, "\n")
+    imprimir_plantacao(plantacoes)
+
+
+"""
+    Usa a função imprimir_temperatura com a complexidade O(N²)
+"""
+
+
+def fase_2_temperaturas_desordenadas(plantacoes: list[PlantacaoTemperatura]):
+    imprimir_temperatura(plantacoes)
+
+
+"""
+    Usa a função sort_temperaturas com a complexidade O(N²)
+"""
+
+
+def fase_2_1_temperaturas_ordenadas(plantacoes: list[PlantacaoTemperatura]):
+    print("\n", "-" * 50, "\n")
+    plantacoes_ordenadas = sort_temperaturas(plantacoes)
+    imprimir_temperatura(plantacoes_ordenadas)
+
+
+"""
+    Usa a função imprimir_status com a complexidade O(N³)
+"""
+
+
+def fase_3_status(plantacoes: list[PlantacaoTemperatura]):
+    print("\n", "-" * 50, "\n")
+    imprimir_status(plantacoes)
 
 
 def main():
     plantacoes = leitura_das_plantacoes()
 
-    imprimir_plantacao(plantacoes)
-
-    print("\n", "-" * 50, "\n")
-
-    imprimir_temperatura(plantacoes)
-
-    print("\n", "-" * 50, "\n")
-
-    imprimir_status(plantacoes)
+    fase_1_plantacoes(plantacoes)
+    fase_2_temperaturas_desordenadas(plantacoes)
+    fase_2_1_temperaturas_ordenadas(plantacoes)
+    fase_3_status(plantacoes)
 
 
 if __name__ == "__main__":

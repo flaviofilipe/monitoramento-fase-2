@@ -22,7 +22,7 @@ Deverá ser informado como aviso as temperaturas entre 25 e 30 graus e emitir um
 
 [X] Item 2d.2 - Imprimir a lista de letura por cada objeto: `operacoes.imprimir_temperatura`
 
-[ ] Item 2d.3
+[X] Item 2d.3
 
 [X] Item 2d.4 - Adicionar uma complexidade O(N^3): `operacoes.imprimir_status`
 

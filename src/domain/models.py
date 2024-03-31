@@ -6,10 +6,12 @@ class TemperaturaInterface(ABC):
         self.value = value
 
     @abstractmethod
-    def get_value(self) -> float: ...
+    def get_value(self) -> float:
+        ...
 
     @abstractmethod
-    def set_value(self, value: float) -> None: ...
+    def set_value(self, value: float) -> None:
+        ...
 
     def __str__(self):
         return f"{self.value}°C"
