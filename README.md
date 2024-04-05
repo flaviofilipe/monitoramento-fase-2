@@ -10,21 +10,21 @@ Deverá ser informado como aviso as temperaturas entre 25 e 30 graus e emitir um
 
 **Item 2**
 
-[X] Item 2a - Criar uma função O(N): `src.sensoriamento.gerar`
+[X] Item 2a - Criar uma função O(N): `src.sensores.sensoriamento.gerar`
 
-[X] Item 2b - `models.Temperatura`
+[X] Item 2b - coluna de identificação: `src.models.Temperatura`
 
 [X] Item 2c - Método main: `main.main`
 
 **Item 2d**
 
-[X] Item 2d.1 - Imprimir a lista de plantações: `operacoes.imprimir_plantacao`
+[X] Item 2d.1 - Imprimir a lista de plantações: `src.operacoes.imprimir_plantacao`
 
-[X] Item 2d.2 - Imprimir a lista de letura por cada objeto: `operacoes.imprimir_temperatura`
+[X] Item 2d.2 - Imprimir a lista de letura por cada objeto: `src.operacoes.imprimir_temperatura`
 
-[X] Item 2d.3
+[X] Item 2d.3 - Ordernação crescente: `src.operacoes.sort_temperaturas`
 
-[X] Item 2d.4 - Adicionar uma complexidade O(N^3): `operacoes.imprimir_status`
+[X] Item 2d.4 - Adicionar uma complexidade O(N^3): `src.operacoes.imprimir_status`
 
 **Item 3**
 

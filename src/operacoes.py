@@ -158,7 +158,7 @@ def quick_sort_temperaturas(temperaturas: list):
 
     Complexidade: O(nmLog(m))
 
-    onde n é o número de PlantacaoTemperatura na lista data, 
+    onde n é o número de PlantacaoTemperatura na lista data,
     e m é o número médio de objetos Temperatura na lista temperaturas de cada PlantacaoTemperatura.
 
     Isso ocorre porque a função contém um loop que é executado n vezes, e dentro deste loop,
