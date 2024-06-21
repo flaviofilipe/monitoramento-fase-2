@@ -1,4 +1,4 @@
-from src.domain.sensores import ISensorTemperatura
+from client.src.domain.sensores import ISensorTemperatura
 from random import uniform
 
 

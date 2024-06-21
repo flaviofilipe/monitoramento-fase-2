@@ -1,4 +1,4 @@
-from src.domain.models import TemperaturaInterface, PlantacaoInterface
+from client.src.domain.models import TemperaturaInterface, PlantacaoInterface
 
 
 class Temperatura(TemperaturaInterface):
@@ -10,5 +10,4 @@ class Temperatura(TemperaturaInterface):
 
 
 class Plantacao(PlantacaoInterface):
-    def monitoramento(self) -> float:
-        return self.sensor.get_value()
+    def monitoramento(self) -> float: ...
