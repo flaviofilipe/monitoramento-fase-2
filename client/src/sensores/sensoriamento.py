@@ -1,5 +1,5 @@
-from src.sensores.temperatura import SensorTemperatura
-from src.models import Temperatura
+from client.src.sensores.temperatura import SensorTemperatura
+from client.src.models import Temperatura
 
 
 """

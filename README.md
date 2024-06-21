@@ -14,7 +14,7 @@ Deverá ser informado como aviso as temperaturas entre 25 e 30 graus e emitir um
 
 [ ] Item 2b - coluna de identificação
 
-[ ] Item 2c - Método main (cliente e servidor)
+[x] Item 2c - Método main (cliente e servidor)
 
 **Item 2d**
 

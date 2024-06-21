@@ -1,7 +1,7 @@
 import time
-from src.models import Plantacao
-from src.sensores.sensoriamento import gerar
-from src.operacoes import (
+from client.src.models import Plantacao
+from client.src.sensores.sensoriamento import gerar
+from client.src.operacoes import (
     imprimir_plantacao,
     imprimir_temperatura,
     imprimir_status,
