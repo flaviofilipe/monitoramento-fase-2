@@ -1,6 +1,6 @@
 import time
 from client.src.models import Plantacao
-from client.src.sensores.sensoriamento import gerar
+from client.src.sensores.sensoriamento import gerar_paralelo
 from client.src.operacoes import (
     imprimir_plantacao,
     imprimir_temperatura,
@@ -36,7 +36,7 @@ def leitura_das_plantacoes(
             nome=f"Plantacao_{i+1}",
         )
 
-        temperatura = gerar(quant_leituras)
+        temperatura = gerar_paralelo(quant_leituras, 10)
 
         plantacoes.append(PlantacaoTemperatura(plantacao, temperatura))
 
