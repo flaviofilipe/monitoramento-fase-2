@@ -5,6 +5,7 @@ from client.src.sensores.sensoriamento import gerar_paralelo
 from client.src.operacoes import (
     imprimir_plantacao,
     imprimir_temperatura,
+    imprimir_status,
     sort_temperaturas,
     PlantacaoTemperatura,
 )
@@ -67,14 +68,15 @@ def fase_2_1_temperaturas_ordenadas(plantacoes: list[PlantacaoTemperatura]):
 
 
 """
-    Faz o envio da lista para usar a função imprimir_status com a complexidade O(N³), no Servidor
+    Usa a função imprimir_status com a complexidade O(N³), e faz uma requisição POST para o servidor
 """
 
 
 def fase_3_status(plantacoes: list[PlantacaoTemperatura]):
     print("\n", "-" * 50, "\n")
-    plantacoes_dict = [{"plantacao": p.plantacao, "temperaturas": [{"value": t.get_value()} for t in p.temperaturas]} for p in plantacoes]
-    response = requests.post(SERVER_URL, json=plantacoes_dict)
+    
+    dados = imprimir_status(plantacoes)
+    response = requests.post(SERVER_URL, json=dados)
     print(response.json())
 
 
