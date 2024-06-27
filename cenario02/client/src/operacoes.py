@@ -69,6 +69,52 @@ def verifica_temperatura(temperatura: float) -> str:
         return "Muito Quente"
 
 """
+    Imprime o status das plantações, baseado na temperatura
+    :param data: lista de tuplas contendo plantação e temperaturas
+    :return: None
+
+    Complexidade: O(N³)
+
+    Esta função tem uma complexidade cubica O(N³) pois tem 3 loops aninhados
+    Obtem todas as temperaturas de cada plantação,
+    compara com os status mapeados
+    E imprime o status da região baseado na temperatura
+
+    Este algorítimo tem um custo de tempo e processamento alto,
+    pode gerar um brute force, pois tem 3 loops aninhados e precisaria
+    percorrer todos os dados.
+    Dependendo da quantidade de plantações e leituras,
+    o tempo de execução pode inviável
+"""
+
+def imprimir_status(data: list[PlantacaoTemperatura]):
+    TIPO_REGIAO = [
+        {"nome": "congelando", "temperatura": 10.0},
+        {"nome": "frio", "temperatura": 20.0},
+        {"nome": "ideal", "temperatura": 30.0},
+        {"nome": "quente", "temperatura": 40.0},
+        {"nome": "muito quente", "temperatura": 50.0},
+        {"nome": "queimando", "temperatura": 80.0},
+    ]
+
+    regioes_processadas = []
+
+    for plantacao_temperatura in data:
+        plantacao = plantacao_temperatura.plantacao
+        temperaturas = plantacao_temperatura.temperaturas
+
+        for temperatura in temperaturas:
+            for regiao in TIPO_REGIAO:
+                if temperatura.value < regiao["temperatura"]:
+                    regioes_processadas.append({
+                        "plantacao": plantacao,
+                        "regiao": regiao["nome"],
+                        "temperatura": temperatura.value
+                    })
+                    break
+    return regioes_processadas
+
+"""
     Algoritmo de ordenação Quick Sort
     :param data: lista de objetos Temperatura
     :return: lista de objetos Temperatura ordenados
