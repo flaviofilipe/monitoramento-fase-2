@@ -1,6 +1,5 @@
 import time
 import requests
-from client.src.models import Plantacao
 from client.src.sensores.sensoriamento import gerar_paralelo
 from client.src.operacoes import (
     imprimir_plantacao,
@@ -73,7 +72,13 @@ def fase_2_1_temperaturas_ordenadas(plantacoes: list[PlantacaoTemperatura]):
 
 def fase_3_status(plantacoes: list[PlantacaoTemperatura]):
     print("\n", "-" * 50, "\n")
-    plantacoes_dict = [{"plantacao": p.plantacao, "temperaturas": [{"value": t.get_value()} for t in p.temperaturas]} for p in plantacoes]
+    plantacoes_dict = [
+        {
+            "plantacao": p.plantacao,
+            "temperaturas": [{"value": t.get_value()} for t in p.temperaturas],
+        }
+        for p in plantacoes
+    ]
     response = requests.post(SERVER_URL, json=plantacoes_dict)
     print(response.json())
 

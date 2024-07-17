@@ -1,6 +1,56 @@
-### Minimundo
+# Minimundo
 Considerando 10 plantações ou 10 áreas de cultivo diferentes em uma plantação, é necessário o monitoramento da umidade dos solos para gerar informações sobre suas temperaturas. A temperatura ideal para a semeadura é entre 20º e 30º, tendo em média 25º. 
 Deverá ser informado como aviso as temperaturas entre 25 e 30 graus e emitir um alerta acima de 30º. A entrada poderá ser feita através de um sensor de umidade, mas será simulado para este projeto.
+
+# Instalação
+
+**Criação do ambiente virtual**
+```
+   python -m venv venv
+```
+
+**Ativação do ambiente virtual no Unix**
+```
+   source venv/bin/activate
+```
+
+**Ativação do ambiente virtual no Windows**
+```
+   ./venv/Scripts/Activate
+```
+
+**Instalação das bibliotecas**
+```
+   pip install -r requirements.txt
+``` 
+
+# Execução
+
+## Cenário 01
+
+**Iniciar Servidor**
+
+```
+   python cenario01/server/client_server.py
+```
+
+**Executar cliente**
+```
+   python cenario01/main_client.py
+```
+
+## Cenário 02
+
+**Iniciar Servidor**
+
+```
+   python cenario02/server/client_server.py
+```
+
+**Executar cliente**
+```
+   python cenario02/main_client.py
+```
 
 
 ## Requisitos
@@ -23,12 +73,12 @@ Deverá ser informado como aviso as temperaturas entre 25 e 30 graus e emitir um
 ### Exemplificar os cenários:
 
 **Cenário 1**
-[X] Transferir o item de maior complexidade da atividade anterior (item d.4) para o servidor;
+[x] Transferir o item de maior complexidade da atividade anterior (item d.4) para o servidor;
 
-[X] N clientes envia para o servidor dados sensoriados e este último deverá processa-los;
+[x] N clientes envia para o servidor dados sensoriados e este último deverá processa-los;
 
 **Cenário 2**
-[X] A rotina de maior complexidade deve ser deslocada para os N CLIENTES na BORDA, que devem realizar todo o processamento dos dados sensoriados.
+[x] A rotina de maior complexidade deve ser deslocada para os N CLIENTES na BORDA, que devem realizar todo o processamento dos dados sensoriados.
 
 
 **Item 3**

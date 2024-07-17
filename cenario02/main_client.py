@@ -1,6 +1,5 @@
 import time
 import requests
-from client.src.models import Plantacao
 from client.src.sensores.sensoriamento import gerar_paralelo
 from client.src.operacoes import (
     imprimir_plantacao,
